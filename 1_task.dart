@@ -8,6 +8,7 @@ void main() {
   fourthTask();
   fifthTask();
   sixthTask();
+  seventhTask();
 }
 
 void firstTask() {
@@ -52,71 +53,107 @@ void secondTask() {
 }
 
 void thirdTask() {
- print("**Task three: Logical operators**");
+  print("**Task three: Logical operators**");
 
   bool hasMoney = true;
-  bool isOpen = false; 
+  bool isOpen = false;
 
-bool canIBuy = (hasMoney && isOpen);
-bool shouldIWait = hasMoney && !isOpen  ; 
+  bool canIBuy = (hasMoney && isOpen);
+  bool shouldIWait = hasMoney && !isOpen;
 
-print("Чи можна зробити покупку (якщо є гроші та магазин відкритий)? $canIBuy");
-print("Чи потрібно почекати (якщо магазин закритий абонемає грошей)? $shouldIWait");
+  print(
+    "Чи можна зробити покупку (якщо є гроші та магазин відкритий)? $canIBuy",
+  );
+  print(
+    "Чи потрібно почекати (якщо магазин закритий абонемає грошей)? $shouldIWait",
+  );
 
- print("*********************");
-  }
+  print("*********************");
+}
 
 void fourthTask() {
- print("**Task four: Ternary Operators**");
-  
-  var  temperature = 27;
+  print("**Task four: Ternary Operators**");
+
+  var temperature = 27;
 
   print('Сьогодні температура на вулиці $temperature градусів за цельсієм');
   // String mood ;
-  if (temperature > 25) {print("Відчувається Тепло"); }
-  else {print("Відчувається Прохолодно");};
+  if (temperature > 25) {
+    print("Відчувається Тепло");
+  } else {
+    print("Відчувається Прохолодно");
+  }
+  ;
 
-  var extremeTernary = (temperature < 10) ? 'Відчувається Дуже холодно' :  'Відчувається Прохолодно';
+  var extremeTernary =
+      (temperature < 10)
+          ? 'Відчувається Дуже холодно'
+          : 'Відчувається Прохолодно';
   print(extremeTernary);
 
- 
- print("*********************");
+  print("*********************");
 }
 
 void fifthTask() {
- print("**Task Five: Assignment Operators**");
-  
-double score = 0;
-double correctAnswers = 17;
-double mistakes = 3;
-double totalQuestions = 20;
+  print("**Task Five: Assignment Operators**");
 
-score +=correctAnswers*10;
-score -=mistakes*5;
-score *= 2;
-score /= totalQuestions;
+  double score = 0;
+  double correctAnswers = 17;
+  double mistakes = 3;
+  double totalQuestions = 20;
 
-print('Загальна оцінка $score');
-print("*********************");
+  score += correctAnswers * 10;
+  score -= mistakes * 5;
+  score *= 2;
+  score /= totalQuestions;
 
+  print('Загальна оцінка $score');
+  print("*********************");
 }
 
 void sixthTask() {
- print("**Task Six: IfElse Statements**");
-  
-var examScore = 19;
+  print("**Task Six: IfElse Statements**");
+
+  var examScore = 19;
 
   if (examScore >= 90) {
     print('Відмінно');
-  } else if(examScore >= 75) {
+  } else if (examScore >= 75) {
     print('Добре');
   } else if (examScore >= 60) {
     print('Задовільно');
-  } else if (examScore >= 20){
+  } else if (examScore >= 20) {
     print('Не здано');
   } else {
-    print('Повторний курс');  }
+    print('Повторний курс');
+  }
 
-print("*********************");
+  print("*********************");
+}
 
+void seventhTask() {
+  print("**Task Seven: Switch  Statements**");
+
+  var dayNumber = 7;
+
+  switch (dayNumber) {
+    case 1:
+      print('понеділок');
+    case 2:
+      print('Вівторок');
+    case 3:
+      print('Середа');
+    case 4:
+      print("Четвер");
+    case 5 :
+      print("П'ятниця");
+    case 6 :
+      print('Субота. Вихідний день 🎉');
+    case 7:
+      print('Неділя. Вихідний день 🎉');
+    default:
+      print('Введений не вірний номер дня тижня');
+  }
+
+  print("*********************");
 }
