@@ -195,18 +195,18 @@ void eighthTask() {
   print("*********************");
 }
 
-
 void ninthTask() {
   print("**Task Nine: while loop**");
   int counter = 10;
   while (counter >= 1) {
 
     if (counter % 2 == 0) {
-      print('Дільться: $counter на 2');
+      print('Парне число: $counter ділиться на 2');
     } else {
-     print('Не ділиться $counter на 2');
+     print('Непарне число: $counter не ділиться на 2');
     }
     counter--;
   }
   print("*********************");
 }
+
