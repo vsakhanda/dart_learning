@@ -2,14 +2,15 @@ void main() {
   print("feat(DART-06): initial commit");
   print("second raw");
   print("*********************");
-  firstTask();
-  secondTask();
-  thirdTask();
-  fourthTask();
-  fifthTask();
-  sixthTask();
-  seventhTask();
-  eighthTask();
+  // firstTask();
+  // secondTask();
+  // thirdTask();
+  // fourthTask();
+  // fifthTask();
+  // sixthTask();
+  // seventhTask();
+  // eighthTask();
+  ninthTask();
 }
 
 void firstTask() {
@@ -191,11 +192,21 @@ void eighthTask() {
     // print('Сума числе: до $i and $total');
   }
   print('Загальна сума чисел $total');
+  print("*********************");
+}
 
-  // 1) Виведіть всі числа від 1 до 10.
 
-  // 2) Виведіть тільки парні числа.
+void ninthTask() {
+  print("**Task Nine: while loop**");
+  int counter = 10;
+  while (counter >= 1) {
 
-  // 3) Обчисліть суму чисел від 1 до 10.
+    if (counter % 2 == 0) {
+      print('Дільться: $counter на 2');
+    } else {
+     print('Не ділиться $counter на 2');
+    }
+    counter--;
+  }
   print("*********************");
 }
