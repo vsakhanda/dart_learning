@@ -6,6 +6,7 @@ void main() {
   secondTask();
   thirdTask();
   fourthTask();
+  fifthTask();
 }
 
 void firstTask() {
@@ -79,4 +80,22 @@ void fourthTask() {
 
  
  print("*********************");
+}
+
+void fifthTask() {
+ print("**Task Five: Assignment Operators**");
+  
+double score = 0;
+double correctAnswers = 17;
+double mistakes = 3;
+double totalQuestions = 20;
+
+score +=correctAnswers*10;
+score -=mistakes*5;
+score *= 2;
+score /= totalQuestions;
+
+print('Загальна оцінка $score');
+print("*********************");
+
 }
