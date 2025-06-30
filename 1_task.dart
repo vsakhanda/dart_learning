@@ -5,6 +5,7 @@ void main() {
   firstTask();
   secondTask();
   thirdTask();
+  fourthTask();
 }
 
 void firstTask() {
@@ -62,3 +63,20 @@ print("Чи потрібно почекати (якщо магазин закр�
 
  print("*********************");
   }
+
+void fourthTask() {
+ print("**Task four: Ternary Operators**");
+  
+  var  temperature = 27;
+
+  print('Сьогодні температура на вулиці $temperature градусів за цельсієм');
+  // String mood ;
+  if (temperature > 25) {print("Відчувається Тепло"); }
+  else {print("Відчувається Прохолодно");};
+
+  var extremeTernary = (temperature < 10) ? 'Відчувається Дуже холодно' :  'Відчувається Прохолодно';
+  print(extremeTernary);
+
+ 
+ print("*********************");
+}
