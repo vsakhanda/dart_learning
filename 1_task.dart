@@ -7,6 +7,7 @@ void main() {
   thirdTask();
   fourthTask();
   fifthTask();
+  sixthTask();
 }
 
 void firstTask() {
@@ -96,6 +97,26 @@ score *= 2;
 score /= totalQuestions;
 
 print('Загальна оцінка $score');
+print("*********************");
+
+}
+
+void sixthTask() {
+ print("**Task Six: IfElse Statements**");
+  
+var examScore = 19;
+
+  if (examScore >= 90) {
+    print('Відмінно');
+  } else if(examScore >= 75) {
+    print('Добре');
+  } else if (examScore >= 60) {
+    print('Задовільно');
+  } else if (examScore >= 20){
+    print('Не здано');
+  } else {
+    print('Повторний курс');  }
+
 print("*********************");
 
 }
