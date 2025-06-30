@@ -3,10 +3,11 @@ void main() {
   print("second raw");
   print("*********************");
   firstTask();
+  secondTask();
 }
 
 void firstTask() {
-   print("**Task one**");
+  print("**Task one: Mathematical operators**");
   double length = 18.4;
   double heigth = 30.9;
 
@@ -18,6 +19,30 @@ void firstTask() {
   );
 
   var proximateSqure = area ~/ 1;
-  print("*********************");
+
   print("Approximate area of the rectangle is $proximateSqure ");
+  print("*********************");
+}
+
+void secondTask() {
+  print("**Task two: Comparison operators**");
+
+  double number = 32;
+  var cash = 50;
+  var deposit = 100;
+  double divisor = 8;
+
+  print('number == cash: ${number >= cash}');
+  print('number == deposit: ${number <= deposit}');
+  print('remainder number / $divisor: ${number % divisor == 0}');
+  // TO DO analize functionality of deviding
+  // double devide = ((number % divisor) - (number / divisor));
+  // double div1 = (number % divisor);
+  // double div2 = (number / divisor);
+  // print('div 1 - $div1');
+  // print('div 2 - $div2');
+
+  // print('$devide');
+  // print('number / $divisor: ${devide == 0}');
+  print("*********************");
 }
