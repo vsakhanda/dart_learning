@@ -2,15 +2,16 @@ void main() {
   print("feat(DART-06): initial commit");
   print("second raw");
   print("*********************");
-  // firstTask();
-  // secondTask();
-  // thirdTask();
-  // fourthTask();
-  // fifthTask();
-  // sixthTask();
-  // seventhTask();
-  // eighthTask();
+  firstTask();
+  secondTask();
+  thirdTask();
+  fourthTask();
+  fifthTask();
+  sixthTask();
+  seventhTask();
+  eighthTask();
   ninthTask();
+  tenthTask();
 }
 
 void firstTask() {
@@ -199,14 +200,29 @@ void ninthTask() {
   print("**Task Nine: while loop**");
   int counter = 10;
   while (counter >= 1) {
-
     if (counter % 2 == 0) {
       print('Парне число: $counter ділиться на 2');
     } else {
-     print('Непарне число: $counter не ділиться на 2');
+      print('Непарне число: $counter не ділиться на 2');
     }
     counter--;
   }
   print("*********************");
 }
 
+void tenthTask() {
+  print("**Task ten: Break and Continue**");
+  
+    for (int i = 0; i < 20; i++) {
+      if (i % 3 == 0) {
+        continue;
+      }
+      if (i >= 15) {
+        print('Занадто велике значення, вихід.');
+        break;
+      }
+      print('Поточне значення: $i');
+    }
+    print("*********************");
+    return;
+}
