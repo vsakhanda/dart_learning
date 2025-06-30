@@ -4,6 +4,7 @@ void main() {
   print("*********************");
   firstTask();
   secondTask();
+  thirdTask();
 }
 
 void firstTask() {
@@ -46,3 +47,18 @@ void secondTask() {
   // print('number / $divisor: ${devide == 0}');
   print("*********************");
 }
+
+void thirdTask() {
+ print("**Task three: Logical operators**");
+
+  bool hasMoney = true;
+  bool isOpen = false; 
+
+bool canIBuy = (hasMoney && isOpen);
+bool shouldIWait = hasMoney && !isOpen  ; 
+
+print("Чи можна зробити покупку (якщо є гроші та магазин відкритий)? $canIBuy");
+print("Чи потрібно почекати (якщо магазин закритий абонемає грошей)? $shouldIWait");
+
+ print("*********************");
+  }
