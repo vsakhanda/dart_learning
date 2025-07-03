@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   word_generator: ^0.5.0
+    
 
 dev_dependencies:
   flutter_test:
