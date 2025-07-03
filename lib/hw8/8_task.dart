@@ -1,11 +1,14 @@
 import 'dart:math';
 
+import 'names_hw8.dart';
+
 void main() {
 
   print('Homework for lesson 8');
   print('***************');
 
    list();
+   set();
 }
 
 
@@ -58,7 +61,41 @@ int total = 0;
 // Виведіть довжину списку temp.
   print(temp);
 
+ print("*********************");
+}
+
+
+
+
+void set() {
+ print("**Task 2 Set**");
+ print("**List 1. uniqueNames1**");
+ final uniqueNames1 = Set.from(ukrainianNames1);
+ print(uniqueNames1);
+ print(uniqueNames1.length);
+ print("**List 2. uniqueNames2**");
+ final uniqueNames2 = Set.from(ukrainianNames2);
+ print(uniqueNames2);
+ print(uniqueNames2.length);
+
+//Створіть новий Set зі спільними іменами обох списків. Виведіть кількість елементів у цій множині.
+ print("**United list. unionSet**");
+final unionSet = uniqueNames1.union(uniqueNames2);
+print(unionSet);
+print("Довжина об'єднаного сету");
+print (unionSet.length);
+
+
+// Створіть множину з іменами, що є в uniqueNames1, але яких немає в uniqueNames2. Виведіть ці імена.
+print("**Difference 1 vs 2 list**");
+final diffNames1vsNames2 =   uniqueNames1.difference(uniqueNames2);
+  print('$diffNames1vsNames2'); ;
+
+
+// Створіть множину з іменами, що є в uniqueNames2, але яких немає в uniqueNames1. Виведіть ці імена.
+print("**Difference 2 vs 1 list**");
+final diffNames2vsNames1 =  uniqueNames2.difference(uniqueNames1);
+print(' $diffNames2vsNames1');  ;
 
  print("*********************");
-
 }
