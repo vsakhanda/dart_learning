@@ -18,7 +18,7 @@ void list() {
   final list = List.generate(100, (index) => Random().nextInt(101));
   // Виведіть цей список на екран.
   print('Виведення списку на екран $list');
-  int element = list.elementAt(65);
+  int element = list[65];
 
   // Виведіть на екран 65-й елемент списку у форматі: "65-й елемент: [значення]".
   print('Виведення списку на екран елемента 65 =  $element');
