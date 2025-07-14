@@ -1,25 +1,29 @@
 import 'dart:async';
 
 Future<void> main() async {
-  print("**Start of the program **");
-  print("Task 1: Асинхронне отримання імені");
-  final name = await fetchName();
-  print("Мене звати $name\n");
+   print("**Start of the program **");
+  // print("Task 1: Асинхронне отримання імені");
+  // final name = await fetchName();
+  // print("Мене звати $name\n");
 
-  print("Task 2: Асинхронне отримання вікуі");
-  final ageStr = await fetchAge();
-  final age = int.parse(ageStr);
-  print("Мені $age ${ageSuffix(age)}\n");
+  // print("Task 2: Асинхронне отримання вікуі");
+  // final ageStr = await fetchAge();
+  // final age = int.parse(ageStr);
+  // print("Мені $age ${ageSuffix(age)}\n");
 
-  print("Task 3: Послідовне виконання:");
-  await runSequential();
+  // print("Task 3: Послідовне виконання:");
+  // await runSequential();
 
-  print("Task 4: Паралельне виконання Future (Future.wait)");
-  await runParallel();
+  // print("Task 4: Паралельне виконання Future (Future.wait)");
+  // await runParallel();
 
-  print("Task 5: Зворотний відлік з затримкою");
-  final result = await delayedCountdown(3);
-  print(result);
+  // print("Task 5: Зворотний відлік з затримкою");
+  // final result = await delayedCountdown(3);
+  // print(result);
+
+  print("Part 2: Streams");
+  print("Task 6: Стрім з чисел (fromIterable)");
+  await streamFromIterableDemo();
 
   print('** end of the program**');
 }
@@ -82,4 +86,18 @@ Future<String> delayedCountdown(int seconds) async {
     await Future.delayed(Duration(seconds: 1));
   }
   return "Старт!";
+}
+
+// Task 6: Стрім з чисел (fromIterable)
+Future<void> streamFromIterableDemo() async {
+  final stream = Stream.fromIterable([1, 2, 3, 4, 5]);
+
+  print("await for:");
+  await for (var value in stream) {
+    print(value);
+  }
+
+  final stream2 = Stream.fromIterable([1, 2, 3, 4, 5]);
+  print("\nlisten:");
+  stream2.listen((value) => print(value));
 }
