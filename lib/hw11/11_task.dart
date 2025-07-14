@@ -23,8 +23,11 @@ Future<void> main() async {
 
   print("Part 2: Streams");
   print("Task 6: Стрім з чисел (fromIterable)");
-  await streamFromIterableDemo();
+ // await streamFromIterableDemo();
 
+
+  print("Task 7: Зворотний відлік зі стріму (periodic)");
+streamCountdown();
   print('** end of the program**');
 }
 
@@ -100,4 +103,13 @@ Future<void> streamFromIterableDemo() async {
   final stream2 = Stream.fromIterable([1, 2, 3, 4, 5]);
   print("\nlisten:");
   stream2.listen((value) => print(value));
+}
+
+// Task 7: Зворотний відлік зі стріму (periodic)
+Future<void> streamCountdown() async {
+  final countdown = Stream.periodic(Duration(seconds: 1), (count) => count + 1).take(10);
+
+  await for (final second in countdown) {
+    print("$second...");
+  }
 }
