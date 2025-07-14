@@ -4,7 +4,7 @@ Future<void> main() async {
   print("**Start of the program **");
   print("Task 1: Асинхронне отримання імені");
   final name = await fetchName();
-  print("Мене звати $name\n" );
+  print("Мене звати $name\n");
 
   print("Task 2: Асинхронне отримання вікуі");
   final ageStr = await fetchAge();
@@ -13,6 +13,13 @@ Future<void> main() async {
 
   print("Task 3: Послідовне виконання:");
   await runSequential();
+
+  print("Task 4: Паралельне виконання Future (Future.wait)");
+  await runParallel();
+
+  print("Task 5: Зворотний відлік з затримкою");
+  final result = await delayedCountdown(3);
+  print(result);
 
   print('** end of the program**');
 }
@@ -50,4 +57,29 @@ Future<void> runSequential() async {
 
   stopwatch.stop();
   print("Час послідовного виконання: ${stopwatch.elapsedMilliseconds} мс\n");
+}
+
+// Task 4: Паралельне виконання Future (Future.wait)
+Future<void> runParallel() async {
+  final stopwatch = Stopwatch()..start();
+
+  final results = await Future.wait([fetchName(), fetchAge()]);
+
+  final name = results[0];
+  final age = int.parse(results[1]);
+
+  print("Мене звати $name");
+  print("Мені $age ${ageSuffix(age)}");
+
+  stopwatch.stop();
+  print("Час паралельного виконання: ${stopwatch.elapsedMilliseconds} мс\n");
+}
+
+// Task 5: Зворотний відлік з затримкою
+Future<String> delayedCountdown(int seconds) async {
+  for (int i = seconds; i > 0; i--) {
+    print("$i...");
+    await Future.delayed(Duration(seconds: 1));
+  }
+  return "Старт!";
 }
