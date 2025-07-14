@@ -1,7 +1,7 @@
 import 'dart:async';
 
 Future<void> main() async {
-   print("**Start of the program **");
+  print("**Start of the program **");
   // print("Task 1: Асинхронне отримання імені");
   // final name = await fetchName();
   // print("Мене звати $name\n");
@@ -21,13 +21,16 @@ Future<void> main() async {
   // final result = await delayedCountdown(3);
   // print(result);
 
-  print("Part 2: Streams");
-  print("Task 6: Стрім з чисел (fromIterable)");
- // await streamFromIterableDemo();
+  // print("Part 2: Streams");
+  // print("Task 6: Стрім з чисел (fromIterable)");
+  // // await streamFromIterableDemo();
 
+  // print("Task 7: Зворотний відлік зі стріму (periodic)");
+  // streamCountdown();
 
-  print("Task 7: Зворотний відлік зі стріму (periodic)");
-streamCountdown();
+  print("Task 8: Робота з StreamController");
+  streamControllerDemo();
+
   print('** end of the program**');
 }
 
@@ -107,9 +110,27 @@ Future<void> streamFromIterableDemo() async {
 
 // Task 7: Зворотний відлік зі стріму (periodic)
 Future<void> streamCountdown() async {
-  final countdown = Stream.periodic(Duration(seconds: 1), (count) => count + 1).take(10);
+  final countdown = Stream.periodic(
+    Duration(seconds: 1),
+    (count) => count + 1,
+  ).take(10);
 
   await for (final second in countdown) {
     print("$second...");
   }
+}
+
+// Task 8: Робота з StreamController
+void streamControllerDemo() {
+  final controller = StreamController<String>();
+
+  controller.stream.listen(
+    (value) => print(value),
+    onDone: () => print("Стрім завершено"),
+  );
+
+  controller.add("Hello");
+  controller.add("World");
+  controller.add("Dart");
+  controller.close();
 }
